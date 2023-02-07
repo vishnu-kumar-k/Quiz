@@ -1,0 +1,74 @@
+$backgroundcolor: rgba(255, 255, 255, 0.2);
+
+*{
+    margin: 0;
+    border: 0;
+
+    .card-container
+    {
+        transition-duration: .5s;
+        border-radius: 3px;
+        
+        background-color:rgba(234, 234, 234, 0.7);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+        width: fit-content;
+        height: fit-content;
+        .card-container-inside{
+            display: flex;
+            padding: 2%;
+            flex-direction: column;
+            justify-content: space-around;
+            
+
+            p{
+                font-size: smaller;
+            
+            }
+            button{
+               
+                font-size: 20px;
+                padding: 10px 10px;
+                
+                background-color: rgb(0, 213, 255);
+                color: rgb(0, 0, 0);
+                border-radius: .5em;
+                box-shadow: 2cm;
+                transition-duration: .6s;
+                margin-bottom: 2%;
+                
+            }
+            button:hover{
+                
+                
+            
+                box-shadow:  6px  6px  rgba(0, 195, 255, 0.3);
+                
+            
+            }
+            .related-topics-container{
+                display: flex;
+                justify-content: space-evenly;
+
+                width: 100%;
+                p{
+                    padding: 3px 10px;
+                    // margin-left: 2%;
+                    border: 1px;
+                    border-radius: 10px 2px 10px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    font-size: 15px;
+                }
+            }
+            .time-container{
+                line-height: 30px;
+            }
+              
+        }
+        
+    }
+    .card-container:hover{
+        transform: scale(1.01);
+        
+    }
+}
