@@ -1,9 +1,8 @@
 import React from 'react'
 import "../stylesheet/Question.scss"
-function QuestionCard () {
+export const QuestionCard = () => {
   return (
-    
-      <div className='card'>
+    <div className='card'>
         
       <p>1.Anthor name for vimal Kumar</p>
       <button>Option 1</button>
@@ -11,7 +10,5 @@ function QuestionCard () {
       <button>Option 3</button>
       <button>Option 4</button>
       </div>
-    
   )
 }
-export default QuestionCard;
