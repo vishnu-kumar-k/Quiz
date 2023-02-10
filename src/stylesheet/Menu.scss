@@ -1,7 +1,9 @@
 * {
   margin: 0;
   border: 0;
-
+.con{
+  background-color: white;
+  margin: 0;
   .container {
     border: 0;
     background-color: rgb(0, 0, 0);
@@ -84,5 +86,6 @@
         }
       }
     }
+  }
   }
 }

@@ -45,7 +45,7 @@ function user_inactive()
 //Main Function
 function Menu() {
   return (
-    <>
+    <div className="con">
       <div className="container">
         <div className="menu">
           <div className="image">
@@ -54,7 +54,7 @@ function Menu() {
           {check()}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
