@@ -1,7 +1,7 @@
 import React from 'react';
 import "../stylesheet/Question.scss";
 import { Clock } from './Clock';
-import  QuestionCard  from './QuestionCard';
+import  {QuestionCard } from './QuestionCard';
 function Header()
 {
   return(
