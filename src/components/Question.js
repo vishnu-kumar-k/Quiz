@@ -19,7 +19,7 @@ function Header()
 
 
 
-export  const Question = () => {
+function Question(){
   return (
     <div className='container'>
       {Header()}
@@ -32,3 +32,4 @@ export  const Question = () => {
     </div>
   );
 }
+export default Question;

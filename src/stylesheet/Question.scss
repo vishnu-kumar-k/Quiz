@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    border: 0;
+    .container{
+        margin: 0;
+        border: 0;
+        .header
+        {
+            margin-bottom: 2em;
+            background-color: rgb(0, 255, 255);
+            position: fixed;
+            top: 0;
+            width: 1520px;
+            z-index: 111;
+        
+            
+            .header-container
+            {
+                justify-content: space-between;
+                padding: .5em;
+                margin-left: 6em;
+                margin-right: 6em;
+                
+                display: flex;
+                font-size: 1.5em;
+                font-weight: 400;
+                flex-direction: row;
+                button
+                {
+                    font-size: 1em;
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    color: white;
+                    background-color: rgb(255, 0, 0);
+                    transition-duration: .4s;
+                    &:hover
+                    {
+                        
+                        background-color: rgb(0, 183, 255);
+                    }
+                }
+            }
+        }
+        .question
+        {
+            margin-top: 5em;
+            margin-left: 10em;
+            margin-right: 10em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            .card{
+                padding: 1em;
+                background-color: rgb(162, 209, 229,.8);
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                p{
+                    font-size: 20px;
+                    margin-bottom: 1em;
+                }
+                button 
+                {
+                    width: fit-content;
+                    padding: .8em 3em;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 18px;
+                    background-color: rgb(255, 255, 255);
+                    &:hover{
+                        background-color: aqua;
+                    }
+                    &:active
+                    {
+                        background-color: aquamarine;
+                    }
+                }
+
+            
+            }
+        }
+        
+    }
+}

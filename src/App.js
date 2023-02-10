@@ -1,19 +1,14 @@
 
 
 import React from 'react'
-// import {
-//   RecoilRoot,
-  
-// } from 'recoil';
+
 import DashBoard from './DashBoard';
-import Question from './components/Question';
+import Question from './components/Question.js';
 
 
 function App() {
   return (
-    // <RecoilRoot>
-      <DashBoard/>
-    // </RecoilRoot>
+      <Question/>
   );
 }
 
