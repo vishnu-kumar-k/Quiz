@@ -6,7 +6,8 @@ function App() {
   return (
     <>
     
-    <Question />
+    <Menu/>
+    <Overview />
     < div style={{display:'flex',justifyContent:"space-around",gap:"5em",flexDirection:"row",flexWrap:'wrap'} }>
     
     <Card />
