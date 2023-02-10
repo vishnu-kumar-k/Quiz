@@ -6,6 +6,8 @@ import React from 'react'
   
 // } from 'recoil';
 import DashBoard from './DashBoard';
+import Question from './components/Question';
+
 
 function App() {
   return (
