@@ -1,6 +1,6 @@
 import React from 'react'
 import "../stylesheet/Question.scss"
-export const QuestionCard = () => {
+function QuestionCard () {
   return (
     
       <div className='card'>
@@ -14,3 +14,4 @@ export const QuestionCard = () => {
     
   )
 }
+export default QuestionCard;
