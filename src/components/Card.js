@@ -4,14 +4,15 @@ import { BsFillCalendarCheckFill } from "react-icons/bs";
 import { BsClockFill } from "react-icons/bs";
 import {MdQuestionAnswer} from "react-icons/md";
 import {IoCheckmarkCircle} from "react-icons/io5"
-function Card()
+function Card(contest={})
 {
+    console.log("vandhuten"+JSON.stringify(contest))
     return(<>
     <div className="card-container">
         <img src={course} />
         <br />
         <div className="card-container-inside">
-        <h1> Course Name</h1>
+        <h1> {contest.contest.name}</h1>
         <br />
         <div className="time-container">
         <p><MdQuestionAnswer  /> Total Questions:10</p>
