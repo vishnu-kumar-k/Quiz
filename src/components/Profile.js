@@ -5,7 +5,7 @@ import { Overview } from "./Overview";
 
 function Profile() {
   return (
-    <div className="main-container">
+    <div className="main-profile-container">
       <div className="profile-container">
         <img src={login} alt="" />
         <p>Vishnu Kumar</p>
