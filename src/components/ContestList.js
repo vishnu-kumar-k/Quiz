@@ -17,4 +17,4 @@ const ContestList = (contests=[]) => {
 }
 
 
-export default ContestList
+export default ContestList;
