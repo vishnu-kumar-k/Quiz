@@ -1,5 +1,7 @@
 import React from 'react'
+import { NotificationManager } from 'react-notifications'
 import { useRecoilState } from 'recoil'
+import axios from '../api/axios'
 import { emailState, passwordState, userNameState } from '../atom/auth'
 
 
@@ -15,7 +17,45 @@ const SignUpForm = () => {
 
     const handleSubmit = (e) => {
 
-        // e.preventDefault();
+        e.preventDefault();
+
+        if(userName===" "||userName.length===0)
+        {
+            return(
+                NotificationManager.info('Enter valid username', 'Error',3000 )
+            )
+        }
+        else if(password.length<8)
+        {
+            return(
+                NotificationManager.info('Password length should be atleast 8', 'Error',3000 )
+
+            )
+        }
+        else if(email.length<8)
+        {
+            return(
+                NotificationManager.info('Enter your mail id', 'Error',3000 )
+
+            )
+
+        }
+        else
+        {
+            axios.post('/user', {
+                name:{userName},
+                email:{email},
+                password:{password}
+              })
+              .then(function (response) {
+                NotificationManager.success('Login to continue', 'Success',3000 )
+              })
+              .catch(function (error) {
+                console.log(error);
+                NotificationManager.error(error, 'Error',3000 )
+              });
+        }
+
 
         
 
@@ -23,8 +63,9 @@ const SignUpForm = () => {
     }
     return (
         <div className="signup-form">
+        
             <form>
-                <label for="chk" aria-hidden="true">Sign up</label>
+                <label htmlFor="chk" aria-hidden="true">Sign up</label>
                 <input
                     type="text"
                     name="txt"

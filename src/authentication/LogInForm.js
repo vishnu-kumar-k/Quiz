@@ -2,6 +2,8 @@ import React from 'react'
 import { useRecoilState } from 'recoil'
 import { emailState, passwordState } from '../atom/auth'
 import '../stylesheet/LogInForm.scss'
+import 'react-notifications/lib/notifications.css';
+
 const LogInForm = () => {
 
     const [email,setEmail]=useRecoilState(emailState)
@@ -10,7 +12,7 @@ const LogInForm = () => {
     return (
         <div className="login-form">
             <form>
-                <label className='login-label' for="chk" aria-hidden="true">Login</label>
+                <label className='login-label' htmlFor="chk" aria-hidden="true">Login</label>
                 <input 
                 type="email" 
                 name="email" 
