@@ -84,7 +84,7 @@ const SignUpForm = () => {
                 />
                 <input
                     type="password"
-                    name="pswd"
+                    name="pwd"
                     placeholder="Password"
                     required
                     value={password}
@@ -96,4 +96,4 @@ const SignUpForm = () => {
     )
 }
 
-export default SignUpForm
+export default SignUpForm;
