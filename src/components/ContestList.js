@@ -3,7 +3,7 @@ import Card from './Card'
 import '../stylesheet/ContestList.scss'
 
 const ContestList = (contests=[]) => {
-  console.log("inga iruken"+JSON.stringify(contests.contests))
+  console.log("inga kliruken"+JSON.stringify(contests.contests))
 
   return(
     
