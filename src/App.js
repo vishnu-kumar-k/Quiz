@@ -5,14 +5,18 @@ import {
   Outlet,
 } from "react-router-dom";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PacmanLoader from 'react-spinners/PacmanLoader'
 
 import DashBoard from "./DashBoard";
 import Question from "./components/Question.js";
 import Authentication from "./authentication/Authentication";
-import { RecoilRoot } from "recoil";
+import { RecoilRoot, useRecoilState } from "recoil";
 import Profile from "./components/Profile";
 import Menu from "./components/Menu";
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -37,10 +41,51 @@ const router = createBrowserRouter([
   },
 ]);
 
+
+
+
 function App() {
-  return <RecoilRoot>
-    <RouterProvider router={router} />
-  </RecoilRoot>;
+
+  const [loading, setLoading] = useState(false);
+useEffect(() => {
+  setLoading(true)
+  setTimeout(() => {
+    setLoading(false);
+  }, 4000)
+}, [])
+
+  return (
+
+
+    <>
+      {loading ? (
+        <div style={{
+              
+         
+          marginTop:"18%",
+          display:"flex",
+          justifyContent:"space-around"
+        }}>
+          <PacmanLoader
+            color={"#50C878"}
+            loading={loading}
+            size={60}
+            // cssOverride={
+            //   // "justify-content: center;"
+            // }
+            
+          />
+
+        </div>
+
+      ) :
+        (<RecoilRoot>
+          <RouterProvider router={router} />
+        </RecoilRoot>)}
+  </>)
+
+
+
 }
 
 export default App;

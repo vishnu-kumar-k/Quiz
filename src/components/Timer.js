@@ -2,13 +2,20 @@ import React, { useState, useEffect } from "react";
 
 function Timer() {
   const [time, setTime] = useState(3600); // initial time in seconds
+function Timer() {
+  const [time, setTime] = useState(3600); // initial time in seconds
 
   useEffect(() => {
     const timer = setTimeout(() => {
       if (time > 0) {
         setTime(time - 1);
       }
+    const timer = setTimeout(() => {
+      if (time > 0) {
+        setTime(time - 1);
+      }
     }, 1000);
+    return () => clearTimeout(timer);
     return () => clearTimeout(timer);
   }, [time]);
 

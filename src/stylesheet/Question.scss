@@ -10,7 +10,7 @@
             background-color: rgb(0, 255, 255);
             position: fixed;
             top: 0;
-            width: 1520px;
+            width: 100vw;
             z-index: 111;
         
             
@@ -70,12 +70,15 @@
                     font-size: 18px;
                     background-color: rgb(255, 255, 255);
                     &:hover{
-                        background-color: aqua;
-                    }
-                    &:active
-                    {
                         background-color: aquamarine;
                     }
+                    // &:active
+                    // {
+                    //     background-color: aquamarine;
+                    // }
+                }
+                .chosen{
+                    background-color:aquamarine;
                 }
 
             
