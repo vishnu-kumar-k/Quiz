@@ -49,11 +49,11 @@ const SignUpForm = () => {
                 .then(function (response) {
 
                     console.log(response)
-                    NotificationManager.success('Login to continue', 'Success', 3000)
+                    NotificationManager.success(response.data.msg, 'Success', 3000)
                 })
                 .catch(function (error) {
-                    console.log(error);
-                    NotificationManager.error(error, 'Error', 3000)
+                    console.log("poda"+JSON.stringify( error));
+                    NotificationManager.error(error.data.msg, 'Error', 3000)
                 });
         }
 
