@@ -1,69 +1,83 @@
 * {
   margin: 0;
   border: 0;
-.con{
-  background-color: white;
-  margin: 0;
-  .container {
-    border: 0;
-    background-image: linear-gradient( 135deg, #0095ff 10%, #0396FF 100%);    padding: 0 10%;
-    position: sticky;
+  .con {
+    background-color: white;
+    margin: 0;
+    .container {
+      border: 0;
+      background-image: linear-gradient(135deg, #0095ff 10%, #0396ff 100%);
+      padding: 0 10%;
+      position: sticky;
 
-    .menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
-      padding: 10px;
+        padding: 10px;
 
-      .image {
-        h1 {
-          cursor: pointer;
-          color: aliceblue;
+        .image {
+          h1 {
+            cursor: pointer;
+            color: aliceblue;
+          }
+
+          img {
+            width: 10%;
+          }
         }
 
-        img {
-          width: 10%;
-        }
-      }
-
-      .dropdown {
-        // position: relative;
-        // display: flex;
-        // flex-direction: column;
-        width: fit-content;
-        &:hover .dropdown-content {
-          display: flex;
-          flex-direction: column;
-          gap: 2em;
-        }
-
-        .dropdown-content {
-          padding: .8em 2em;
-          transition-property: all;
-
-          display: none;
-          position: absolute;
+        .dropdown {
+          // position: relative;
+          // display: flex;
+          // flex-direction: column;
           width: fit-content;
-          color: rgb(0, 0, 0);
-          background-color:rgb(255, 255, 255);
-          border-radius: .2em;
-          border: 2px solid rgb(255, 255, 255);
-          z-index: 1;
-          p{
+          &:hover .dropdown-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+          }
+
+          .dropdown-content {
+            padding: 0.8em 2em;
+            transition-property: all;
+            text-decoration: none;
+            display: none;
+            position: absolute;
+            width: fit-content;
             color: rgb(0, 0, 0);
-            font-weight: 500;
-            font-size: 20px;
-            transition-duration: .5s;
-            &:hover{
+            background-color: rgb(255, 255, 255);
+            border-radius: 0.2em;
+            border: 2px solid rgb(255, 255, 255);
+            z-index: 1;
+            p {
+              color: rgb(0, 0, 0);
+              font-weight: 500;
+              font-size: 20px;
+              transition-duration: 0.5s;
+              &:hover {
                 cursor: pointer;
                 transform: scale(1.01);
                 color: rgb(0, 21, 255);
-                text-decoration:underline;
-                
+                text-decoration: underline;
+              }
+            }
+            .text-link {
+              color: rgb(0, 0, 0);
+              font-weight: 500;
+              font-size: 20px;
+              text-decoration: none;
+              transition-duration: 0.5s;
+              &:hover {
+                cursor: pointer;
+                transform: scale(1.01);
+                color: rgb(0, 21, 255);
+                text-decoration: underline;
+              }
             }
             span {
-                font-size: 24px;
+              font-size: 24px;
             }
           }
         }
@@ -85,6 +99,5 @@
         }
       }
     }
-  }
   }
 }

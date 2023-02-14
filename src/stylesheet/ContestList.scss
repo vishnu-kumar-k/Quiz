@@ -1,8 +1,9 @@
-.main-container{
+.card-main-container{
     padding: 4%;
     display:flex;
     justify-content:space-around;
     gap:5em;
     flex-direction:row;
     flex-wrap:wrap;
+    background-color: none;
 }
