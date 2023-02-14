@@ -19,51 +19,52 @@ const SignUpForm = () => {
 
         e.preventDefault();
 
-        if(userName===" "||userName.length===0)
-        {
-            return(
-                NotificationManager.info('Enter valid username', 'Error',3000 )
+        if (userName === " " || userName.length === 0) {
+            return (
+                NotificationManager.info('Enter valid username', 'Error', 3000)
             )
         }
-        else if(password.length<8)
-        {
-            return(
-                NotificationManager.info('Password length should be atleast 8', 'Error',3000 )
+        else if (password.length < 8) {
+            return (
+                NotificationManager.info('Password length should be atleast 8', 'Error', 3000)
 
             )
         }
-        else if(email.length<8)
-        {
-            return(
-                NotificationManager.info('Enter your mail id', 'Error',3000 )
+        else if (email.length < 8) {
+            return (
+                NotificationManager.info('Enter your mail id', 'Error', 3000)
 
             )
 
         }
-        else
-        {
-            axios.post('/user', {
-                name:{userName},
-                email:{email},
-                password:{password}
-              })
-              .then(function (response) {
-                NotificationManager.success('Login to continue', 'Success',3000 )
-              })
-              .catch(function (error) {
-                console.log(error);
-                NotificationManager.error(error, 'Error',3000 )
-              });
+        else {
+            axios.post('/sign-up',
+                {
+                    "name":userName,
+                    "email" :email,
+                    "password":password 
+                }
+
+            )
+                .then(function (response) {
+
+                    console.log(response)
+                    NotificationManager.success('Login to continue', 'Success', 3000)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    NotificationManager.error(error, 'Error', 3000)
+                });
         }
 
 
-        
+
 
 
     }
     return (
         <div className="signup-form">
-        
+
             <form>
                 <label htmlFor="chk" aria-hidden="true">Sign up</label>
                 <input
@@ -90,7 +91,7 @@ const SignUpForm = () => {
                     value={password}
                     onChange={(e) => { setPassword(e.target.value) }}
                 />
-                <button  onClick={(e) => handleSubmit(e)}>Sign up</button>
+                <button onClick={(e) => handleSubmit(e)}>Sign up</button>
             </form>
         </div>
     )

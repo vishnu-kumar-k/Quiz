@@ -23,7 +23,7 @@ function user_active() {
     <p>Hey,<span>Vishnu</span></p>
     <Link className="text-link" to="/profile">Profile</Link>
     <Link className="text-link" to="/">Dashboard</Link>
-    <p style={{color:"red"}} className="link">Logout</p>
+    <Link style={{color:"red"}} className="link"to="/auth">Logout</Link>
   </div>
 </div>);
 }
