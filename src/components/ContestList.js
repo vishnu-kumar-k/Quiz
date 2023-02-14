@@ -7,7 +7,7 @@ const ContestList = (contests=[]) => {
 
   return(
     
-    <div className='main-container'>
+    <div className='card-main-container'>
       {
       contests.contests.map((contest)=>{
         return <Card contest={contest}/>

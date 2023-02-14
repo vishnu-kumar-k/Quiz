@@ -1,5 +1,6 @@
 import "../stylesheet/Menu.scss";
 import profile from "../img/login.png";
+import { Link } from "react-router-dom";
 var user = 1;
 
 
@@ -19,9 +20,9 @@ function user_active() {
     <img src={profile} alt=""/>
   </div>
   <div className="dropdown-content">
-    <p className="link">Hey,<span>Vishnu</span></p>
-    <p className="link">Profile</p>
-    <p className="link">Dashboard</p>
+    <p>Hey,<span>Vishnu</span></p>
+    <Link className="text-link" to="/profile">Profile</Link>
+    <Link className="text-link" to="/">Dashboard</Link>
     <p style={{color:"red"}} className="link">Logout</p>
   </div>
 </div>);
@@ -34,7 +35,7 @@ function user_inactive()
       <img src={profile} alt="" />
     </div>
     <div className="dropdown-content">
-      <p>Login</p>
+      <Link className="text-link" to="/auth">Login</Link>
     </div>
   </div>);
 }
