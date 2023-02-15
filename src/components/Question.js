@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { NotificationManager } from 'react-notifications';
 import { useRecoilState } from 'recoil';
+import axios from '../api/axios';
 import { questionState, responceState, testState } from '../atom/question';
 import "../stylesheet/Question.scss";
 import  {QuestionCard } from './QuestionCard';
@@ -30,13 +32,40 @@ function Question(){
       }
     })  
   },[])
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    axios.post('/submit-test',
+    {
+        testName:test.testName,
+        testId:test.testId,
+        response:responce
+    },
+    {
+        headers:{
+            'Content-Type':'application/json',
+            'Authorization':'Bearer '+localStorage.getItem('jwt')
+        }
+    }
+
+)
+    .then(function (response) {
+
+        console.log(response)
+        NotificationManager.success(response.data.msg, 'Success', 3000)
+    })
+    .catch(function (error) {
+        // console.log("poda"+JSON.stringify( error));
+        NotificationManager.error(error.data.msg, 'Error', 3000)
+    });
+}
+  
   return (
     <div className='container'>
       <div className='header'>
       <div className='header-container'>
-        <p>{test.name}</p>
+        <p>{test.testName}</p>
         <Timer />
-        <button>Submit</button>
+        <button onClick={(e)=>handleSubmit(e)}>Submit</button>
       </div>
     </div>
       <div className='question'>

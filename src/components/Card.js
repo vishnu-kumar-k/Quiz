@@ -39,7 +39,7 @@ function Card({contest})
       .then(function (response) {
         
         setQuestion(response.data.data)
-        setTest({name:contest.name,id:contest.id})
+        setTest({"testName":contest.name,"testId":contest.id})
 
         
         navigate("../test");
