@@ -31,12 +31,15 @@ const LogInForm = () => {
         }
       })
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         NotificationManager.success(response.data.msg, "Success", 3000);
         setJwt(response.data.data.jwt);
+        console.log("jwt"+jwt)
+        localStorage.setItem('jwt',response.data.data.jwt)
         setRefreshToken(response.data.data.refreshToken);
-        navigate("../");
-        // localStorage.setItem('jwt',jwt)
+        navigate("/home");
+
+        
       })
       .catch(function (error) {
         console.log(error);

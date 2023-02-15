@@ -43,6 +43,11 @@ const SignUpForm = () => {
                     "name":userName,
                     "email" :email,
                     "password":password 
+                },
+                {
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
                 }
 
             )

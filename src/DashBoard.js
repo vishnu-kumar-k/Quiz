@@ -17,7 +17,8 @@ const DashBoard = () => {
     //     default: {}, // default value (aka initial value)
     //   });
       const [contests,setContests]=useState([]);
-      const[jwt,setJwt]=useRecoilState(jwtTokenState)
+      
+      // const[jwt,setJwt]=useRecoilState(jwtTokenState)
       useEffect(
         ()=>{
             const fetchPosts = async () => {
@@ -26,7 +27,7 @@ const DashBoard = () => {
                   {
                     headers:{
                       "Content-Type":'application/json',
-                      'Authorization':'Bearer '+jwt
+                      'Authorization':'Bearer '+localStorage.getItem('jwt')
                     }
                   }
                   );
@@ -45,7 +46,8 @@ const DashBoard = () => {
                   }
                 }
               }
-              setJwt(localStorage.getItem('jwt'))
+              // setJwt(localStorage.getItem('jwt'))
+              // console.log(JSON.stringify(jwt))
               fetchPosts();
           
 
@@ -60,7 +62,7 @@ const DashBoard = () => {
     
     <Menu/>
     <Overview />
-    <ContestList contests={contests}/>
+    <ContestList contests={contests} />
     
     
     

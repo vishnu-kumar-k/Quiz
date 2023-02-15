@@ -20,7 +20,7 @@ import Menu from "./components/Menu";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/home",
     element: (
       <>
         <DashBoard />
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/auth",
+    path: "/",
     element: <Authentication />,
   },
   {
@@ -51,7 +51,7 @@ useEffect(() => {
   setLoading(true)
   setTimeout(() => {
     setLoading(false);
-  }, 4000)
+  }, 1000)
 }, [])
 
   return (
