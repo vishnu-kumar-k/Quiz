@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 // import { atom, useRecoilState } from 'recoil';
 import axios from './api/axios';
+import { allTestsState, profileState } from './atom/auth';
 import { jwtTokenState } from './atom/status';
 
 import ContestList from './components/ContestList';
@@ -12,13 +13,8 @@ import { Overview } from './components/Overview';
 
 const DashBoard = () => {
 
-    // const contestListState = atom({
-    //     key: 'ContestListState', // unique ID (with respect to other atoms/selectors)
-    //     default: {}, // default value (aka initial value)
-    //   });
+    
       const [contests,setContests]=useState([]);
-      
-      // const[jwt,setJwt]=useRecoilState(jwtTokenState)
       useEffect(
         ()=>{
             const fetchPosts = async () => {
@@ -32,6 +28,7 @@ const DashBoard = () => {
                   }
                   );
                   setContests(response.data.data);
+                  // fetchProfile();
                   console.log(JSON.stringify(contests));
 
 
@@ -46,12 +43,8 @@ const DashBoard = () => {
                   }
                 }
               }
-              // setJwt(localStorage.getItem('jwt'))
-              // console.log(JSON.stringify(jwt))
-              fetchPosts();
-          
-
-
+              fetchPosts();          
+              
         },
         []
       )

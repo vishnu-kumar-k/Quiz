@@ -36,6 +36,9 @@ const LogInForm = () => {
         setJwt(response.data.data.jwt);
         console.log("jwt"+jwt)
         localStorage.setItem('jwt',response.data.data.jwt)
+        console.log("jwt"+response.data.data.jwt)
+
+        
         setRefreshToken(response.data.data.refreshToken);
         navigate("/home");
 

@@ -16,3 +16,8 @@ export const responceState=atom({
     default:[]
         
 })
+export const testHistoryState=atom({
+    key:'testHistoryState',
+    default:[]
+        
+})

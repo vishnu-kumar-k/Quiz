@@ -13,3 +13,13 @@ export const passwordState=atom({
     key:'passwordState',
     default:''
 })
+
+export const profileState=atom({
+    key:'profileState',
+    default:{}
+})
+
+export const allTestsState=atom({
+    key:'allTestsState',
+    default:{}
+})

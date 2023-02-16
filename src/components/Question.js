@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { NotificationManager } from 'react-notifications';
+import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import axios from '../api/axios';
 import { questionState, responceState, testState } from '../atom/question';
@@ -18,6 +19,7 @@ function Question(){
   const [questions,setQuestions]=useRecoilState(questionState)
   const[test,setTest]=useRecoilState(testState)
   let [responce,setResponce]=useRecoilState(responceState)
+  const navigate=useNavigate()
   var count=0;
 
   useEffect(()=>{
@@ -50,8 +52,9 @@ function Question(){
 )
     .then(function (response) {
 
-        console.log(response)
+        console.log(response.data)
         NotificationManager.success(response.data.msg, 'Success', 3000)
+        navigate('../home')
     })
     .catch(function (error) {
         // console.log("poda"+JSON.stringify( error));

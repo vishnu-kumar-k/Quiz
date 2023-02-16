@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../stylesheet/Profile.scss";
 import login from "../img/login.png";
 import { Overview } from "./Overview";
+import { useRecoilState } from "recoil";
+import { profileState } from "../atom/auth";
+
+import { testHistoryState } from "../atom/question";
 
 function Profile() {
+  const[profile,setProfile]=useRecoilState(profileState)
+  const[testHistory,setTestHistory]=useRecoilState(testHistoryState)
+  
   return (
     <div className="main-profile-container">
       <div className="profile-container">
         <img src={login} alt="" />
-        <p>Vishnu Kumar</p>
+        <p>{profile.name}</p>
       </div>
       <Overview />
       <div className="table-container">
@@ -19,48 +26,23 @@ function Profile() {
             <th>Total Score</th>
             <th>Your Score</th>
             <th>Average Score</th>
-            <th>Rank</th>
+
           </tr>
-          <tr>
+          {
+            testHistory.map((test)=>{
+              return(
+                <tr>
             <td>3</td>
-            <td>Contest Name</td>
-            <td>23</td>
-            <td>2o</td>
-            <td>23</td>
-            <td>1</td>
+            <td>{test.testName}</td>
+            <td>50</td>
+            <td>{test.score}</td>
+            <td>{test.averageScore}</td>
+            
           </tr>
-          <tr>
-            <td>3</td>
-            <td>Contest Name</td>
-            <td>23</td>
-            <td>2o</td>
-            <td>23</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Contest Name</td>
-            <td>23</td>
-            <td>2o</td>
-            <td>23</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Contest Name</td>
-            <td>23</td>
-            <td>2o</td>
-            <td>23</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Contest Name</td>
-            <td>23</td>
-            <td>2o</td>
-            <td>23</td>
-            <td>1</td>
-          </tr>
+              )
+            })
+          }
+          
         </table>
       </div>
     </div>
